@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnywhereGlobe - Redirecting...</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License: https://github.com/rafgraph/spa-github-pages
+      (function() {
+        var l = window.location;
+        var segments = l.pathname.split('/').filter(Boolean);
+        var pathSegmentsToKeep = 0;
+
+        // If hosted on username.github.io/reponame/
+        if (l.hostname.endsWith('github.io') && segments.length > 0) {
+          pathSegmentsToKeep = 1;
+          if (segments[1] === 'docs') {
+            pathSegmentsToKeep = 2;
+          }
+        }
+
+        var repoPrefix = pathSegmentsToKeep > 0 ? '/' + segments.slice(0, pathSegmentsToKeep).join('/') : '';
+        var subRoute = segments.slice(pathSegmentsToKeep).join('/');
+
+        // Only redirect HTML navigation, not broken asset requests
+        var lastSeg = segments[segments.length - 1] || '';
+        if (lastSeg.includes('.') && !lastSeg.endsWith('.html')) {
+          // It was a missing asset (image, css, js). Do not loop-redirect.
+          return;
+        }
+
+        l.replace(
+          l.protocol + '//' + l.host + repoPrefix + '/?' +
+          (subRoute ? '/' + subRoute.replace(/&/g, '~and~') : '') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash
+        );
+      })();
+    </script>
+  </head>
+  <body style="background-color: #020617; color: #94a3b8; font-family: system-ui, -apple-system, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
+    <div style="text-align: center;">
+      <div style="width: 28px; height: 28px; border: 2px solid rgba(255,255,255,0.1); border-top-color: #34d399; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 12px auto;"></div>
+      <p style="font-size: 12px; margin: 0;">Loading AnywhereGlobe...</p>
+    </div>
+    <style>
+      @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+  </body>
+</html>
+

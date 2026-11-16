@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnywhereGlobe - Office Interior Design Portfolio</title>
+    <meta property="og:title" content="AnywhereGlobe - Office Interior Design Portfolio" />
+    <meta name="description" content="A 3D spherical gallery of office interior design and workplace architectural portfolio viewing. Features smooth orbit controls, momentum dragging, 48 curated workspace interiors, custom interior badges, ESG context, and detailed design dossiers." />
+    <meta property="og:description" content="A 3D spherical gallery of office interior design and workplace architectural portfolio viewing. Features smooth orbit controls, momentum dragging, 48 curated workspace interiors, custom interior badges, ESG context, and detailed design dossiers." />
+    
+    <!-- GitHub Pages Canonicalization, SPA Router & Resilient Static Loader -->
+    <script>
+      (function() {
+        var l = window.location;
+
+        // 1. Single-page app query decoder (rafgraph/spa-github-pages protocol)
+        if (l.search && l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+
+        // 2. Trailing slash corrector for repository root URLs on GitHub Pages
+        // Ensures relative asset references (like ./assets/app.js) resolve against repo path, not host root
+        var p = l.pathname;
+        if (l.hostname.endsWith('github.io') && p && !p.endsWith('/') && !p.split('/').pop().includes('.')) {
+          l.replace(l.protocol + '//' + l.host + p + '/' + l.search + l.hash);
+          return;
+        }
+
+        // 3. Static Hosting Auto-Loader:
+        // If deployed to GitHub Pages (or static host) where raw /src/main.tsx cannot be compiled on-the-fly,
+        // automatically inject pre-compiled production CSS and JS bundles.
+        var isStaticHosting = l.hostname.endsWith('github.io') ||
+                              l.protocol === 'file:' ||
+                              (l.protocol === 'https:' && !l.hostname.includes('run.app') && l.hostname !== 'localhost');
+
+        if (isStaticHosting) {
+          window.__IS_STATIC_HOST__ = true;
+          var segments = p.split('/').filter(Boolean);
+          var repoName = (l.hostname.endsWith('github.io') && segments.length > 0 && segments[0] !== 'assets' && segments[0] !== 'docs') ? segments[0] : '';
+          var isDocs = segments.indexOf('docs') !== -1;
+          var basePath = repoName ? ('/' + repoName + (isDocs ? '/docs/' : '/')) : (p.endsWith('/') ? p : './');
+
+          // Load production CSS
+          if (!document.querySelector('link[href*="app.css"]')) {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = basePath + 'assets/app.css';
+            document.head.appendChild(link);
+          }
+
+          // Load production JS bundle
+          if (!document.querySelector('script[data-app-bundle]')) {
+            var s = document.createElement('script');
+            s.type = 'module';
+            s.crossOrigin = 'anonymous';
+            s.setAttribute('data-app-bundle', 'true');
+            s.src = basePath + 'assets/app.js';
+            s.onerror = function() {
+              // Fallback to relative ./assets/app.js
+              var fb = document.createElement('script');
+              fb.type = 'module';
+              fb.crossOrigin = 'anonymous';
+              fb.setAttribute('data-app-bundle', 'fallback');
+              fb.src = './assets/app.js';
+              document.head.appendChild(fb);
+            };
+            document.head.appendChild(s);
+          }
+        }
+      })();
+    </script>
+  </head>
+  <body style="background-color: #020617; color: #f8fafc; margin: 0; padding: 0; min-height: 100vh; overflow: hidden; font-family: system-ui, -apple-system, sans-serif;">
+    <div id="root">
+      <!-- Graceful Pre-hydration / Fallback Screen -->
+      <div id="initial-loader" style="position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #020617; color: #f8fafc; z-index: 9999; padding: 20px; box-sizing: border-box; text-align: center;">
+        <div style="width: 38px; height: 38px; border: 2.5px solid rgba(255,255,255,0.1); border-top-color: #34d399; border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 16px;"></div>
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-family: monospace; color: #ffffff;">WORKSPACE SPHERE</div>
+        <div id="loader-status" style="font-size: 11px; color: #94a3b8; font-family: monospace; margin-top: 6px;">Loading 48 Interior Architecture Portfolios...</div>
+        
+        <div id="loader-help" style="display: none; margin-top: 20px; max-width: 420px; padding: 14px 18px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; font-size: 11px; color: #cbd5e1; line-height: 1.5;">
+          <p style="margin: 0 0 10px 0; color: #38bdf8; font-weight: 600;">Initializing architectural gallery...</p>
+          <p style="margin: 0 0 12px 0;">If loading takes longer than usual, click below to refresh or verify hardware acceleration.</p>
+          <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+            <button onclick="window.location.reload()" style="padding: 6px 14px; background: #0A66C2; color: #ffffff; border: none; border-radius: 6px; font-size: 11px; font-weight: 600; cursor: pointer;">
+              Reload Page
+            </button>
+            <a href="https://www.linkedin.com/company/ESGrp" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 6px 14px; background: #25D366; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 11px; font-weight: 600;">
+              ESGrp LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <noscript>
+          <div style="margin-top: 24px; padding: 12px 16px; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; color: #fca5a5; font-size: 12px; max-width: 360px; text-align: center;">
+            JavaScript is required to experience the 3D portfolio sphere.
+          </div>
+        </noscript>
+      </div>
+      <style>
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      </style>
+      <script>
+        window.__loaderTimer = setTimeout(function() {
+          var help = document.getElementById('loader-help');
+          if (help && document.getElementById('initial-loader')) {
+            help.style.display = 'block';
+          }
+        }, 12000);
+      </script>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
